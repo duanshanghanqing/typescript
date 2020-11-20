@@ -14,6 +14,8 @@ let decLiteral: number = 6;
 let hexLiteral: number = 0xf00d;
 let binaryLiteral: number = 0b1010;
 let octalLiteral: number = 0o744;
+let num: number = null
+let num2: number = undefined
 
 /**
  * 字符串
@@ -29,12 +31,20 @@ let sentence: string = `Hello, my name is ${ userName }.I'll be ${ age + 1 } yea
  */
 let list1: number[] = [1, 2, 3];
 let list2: Array<number> = [1, 2, 3];
+// 累数组
+function test() {
+    // IArguments 是 类数组 类型
+    let args: IArguments = arguments;
+    console.log(args); 
+}
+
 
 /**
  * 元组 Tuple
  */
 let x: [string, number] = ['hello', 10]; // OK
-    x[2] = 'world';
+    // x[2] = 'world';
+    x.push(1); // 只能添加两种类型中的其中一种
 console.log(x[0]); // OK
 //let x: [string, number] = [10,'hello'];
 
@@ -51,7 +61,7 @@ enum Color {Red = 1, Green = 2, Blue = 4};
 let c: Color = Color.Green;
 */
 //查找值
-enum Color {Red = 1, Green, Blue};
+enum Color { Red = 1, Green, Blue };
 let colorName: string = Color[2];
 
 
@@ -104,7 +114,7 @@ let n: null = null;
  */
 // 返回never的函数必须存在无法达到的终点
 function error(message: string): never {
-    throw new Error(message);//有异常抛出
+    throw new Error(message); //有异常抛出
 }
 // 返回never的函数必须存在无法达到的终点
 function infiniteLoop(): never {
@@ -115,6 +125,7 @@ function infiniteLoop(): never {
 
 /**
  * 类型断言(类型检测)
+ * 万金油 any 类型
  */
 let someValue: any = "this is a string";
 let strLength: number = (<string>someValue).length;//告诉解析器，someValue这个变量是字符串类型

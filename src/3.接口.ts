@@ -4,12 +4,14 @@
      * 接口是对一个对象的描述
      */
     interface LabelledValue {
-        label: string;//描述对象属性的类型
+        label: string;// 描述对象属性的类型
+        value?: number; // ? 表示可选参数 
+        readonly id: number; // readonly: 只读熟悉
     }
     function printLabel(labelledObj: LabelledValue) {
         console.log(labelledObj.label);
     }
-    let myObj = {size: 10, label: "Size 10 Object"};
+    let myObj = { size: 10, label: "Size 10 Object", id: 1 };
     printLabel(myObj);
 })();
 

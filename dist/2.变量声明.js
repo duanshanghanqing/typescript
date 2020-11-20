@@ -87,7 +87,7 @@ var numLivesForCat = 9;
 //numLivesForCat = 10;//重新赋值报错
 var kitty = {
     name: "Aurora",
-    numLives: numLivesForCat
+    numLives: numLivesForCat,
 };
 //可以操作属性
 kitty.name = "lisi";
@@ -182,7 +182,7 @@ console.log(element1); // outputs 1
     var search = __assign({}, defaults, { food: "rich" });
     //{ food: "rich", price: "$$", ambiance: "noisy" }
     //对象展开，有相同的属性时，后属性会重写前属性
-    var C = (function () {
+    var C = /** @class */ (function () {
         function C() {
             this.p = 12;
         }
@@ -195,3 +195,4 @@ console.log(element1); // outputs 1
     //clone.p; // ok
     //clone.m(); // error!  展开后会丢失方法
 })();
+//# sourceMappingURL=2.变量声明.js.map

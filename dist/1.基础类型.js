@@ -12,6 +12,8 @@ var decLiteral = 6;
 var hexLiteral = 0xf00d;
 var binaryLiteral = 10;
 var octalLiteral = 484;
+var num = null;
+var num2 = undefined;
 /**
  * 字符串
  */
@@ -24,11 +26,18 @@ var sentence = "Hello, my name is " + userName + ".I'll be " + (age + 1) + " yea
  */
 var list1 = [1, 2, 3];
 var list2 = [1, 2, 3];
+// 累数组
+function test() {
+    // IArguments 是 类数组 类型
+    var args = arguments;
+    console.log(args);
+}
 /**
  * 元组 Tuple
  */
 var x = ['hello', 10]; // OK
-x[2] = 'world';
+// x[2] = 'world';
+x.push(1); // 只能添加两种类型中的其中一种
 console.log(x[0]); // OK
 //let x: [string, number] = [10,'hello'];
 /**
@@ -99,14 +108,16 @@ function error(message) {
 }
 // 返回never的函数必须存在无法达到的终点
 function infiniteLoop() {
-    while (true) {
+    while (true) { //死循环
     }
 }
 /**
  * 类型断言(类型检测)
+ * 万金油 any 类型
  */
 var someValue = "this is a string";
 var strLength = someValue.length; //告诉解析器，someValue这个变量是字符串类型
 //或者
 var nameValue = "this is a string";
 var nameLength = nameValue.length; //告诉解析器，nameValue这个变量是字符串类型
+//# sourceMappingURL=1.基础类型.js.map

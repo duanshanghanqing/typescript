@@ -2,7 +2,7 @@
     function printLabel(labelledObj) {
         console.log(labelledObj.label);
     }
-    var myObj = { size: 10, label: "Size 10 Object" };
+    var myObj = { size: 10, label: "Size 10 Object", id: 1 };
     printLabel(myObj);
 })();
 (function () {
@@ -49,3 +49,4 @@
     //let mySquare = createSquare({ colour: "red", width: 100 });//报错
     var mySquare = createSquare({ color: "red", width: 100 });
 })();
+//# sourceMappingURL=3.接口.js.map
