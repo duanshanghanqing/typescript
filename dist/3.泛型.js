@@ -1,4 +1,5 @@
 // 1
+// 泛型继承接口
 function echo(arg) {
     // console.log(arg.length);
     // return arg.length;
@@ -35,4 +36,33 @@ var num4 = fun4([]);
 console.log(num4);
 var num5 = fun5(1, 2, 3);
 console.log(num5);
+// 7
+// 类用泛型描述
+var Queue = /** @class */ (function () {
+    function Queue() {
+        this.data = [];
+    }
+    Queue.prototype.push = function (item) {
+        this.data.push(item);
+    };
+    Queue.prototype.pop = function () {
+        return this.data.shift();
+    };
+    return Queue;
+}());
+// 实例化类时传入泛型约束
+var queue = new Queue();
+queue.push(1);
+console.log(queue.pop());
+// 传入不同的泛型约束
+var kp1 = {
+    key: 1,
+    value: 'string'
+};
+var kp2 = {
+    key: 'string',
+    value: 1
+};
+// 数组泛型
+var arrTwo = [1, 2, 3];
 //# sourceMappingURL=3.泛型.js.map

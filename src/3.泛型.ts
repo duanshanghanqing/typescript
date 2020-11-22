@@ -7,6 +7,7 @@ interface IWithName {
 }
 
 // 1
+// 泛型继承接口
 function echo<T extends IWithLength>(arg: T): IWithName {
     // console.log(arg.length);
     // return arg.length;
@@ -57,3 +58,42 @@ let num4 = fun4([]);
 console.log(num4);
 let num5 = fun5(1, 2, 3);
 console.log(num5);
+
+
+
+// 7
+// 类用泛型描述
+class Queue<T> { // 声明泛型
+    private data = [];
+    public push(item: T) { // 使用泛型
+        this.data.push(item);
+    }
+    public pop(): T { // 使用泛型
+        return this.data.shift();
+    }
+}
+
+// 实例化类时传入泛型约束
+const queue = new Queue<number>();
+queue.push(1);
+console.log(queue.pop());
+
+
+// 8.动态泛型
+// 声明泛型约束接口
+interface KeyPair<T, U> { // T, U 是动态传入
+    key: T,
+    value: U
+}
+// 传入不同的泛型约束
+let kp1: KeyPair<number, string> = {
+    key: 1,
+    value: 'string'
+}
+let kp2: KeyPair<string, number> = {
+    key: 'string',
+    value: 1
+}
+
+// 数组泛型
+let arrTwo: Array<number> = [1, 2, 3];
