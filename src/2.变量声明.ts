@@ -11,17 +11,17 @@ var F = f();
 console.log(F);//Hello, world!
 
 //var声明变量的类型
-for(var i=0;i<10;i++) {
-    setTimeout(function(){
+for (var i = 0; i < 10; i++) {
+    setTimeout(function () {
         console.log(i);//连续打印10次
-    },10);
+    }, 10);
 }
 //只能使用独立作用域解决，转换成块级作用域解决
-for(var i=0;i<10;i++) {
-    (function(i){
-        setTimeout(function(){
+for (var i = 0; i < 10; i++) {
+    (function (i) {
+        setTimeout(function () {
             console.log(i);//0，1，2，3，4，5，6，7，8，9
-        },10);
+        }, 10);
     })(i);
 }
 
@@ -43,10 +43,10 @@ function k(input: boolean) {
 }
 */
 
-for(let i=0;i<10;i++) {
-    setTimeout(function(){
+for (let i = 0; i < 10; i++) {
+    setTimeout(function () {
         console.log(i);//0，1，2，3，4，5，6，7，8，9
-    },10);
+    }, 10);
 }
 /*
 try {
@@ -117,7 +117,7 @@ console.log(element1); // outputs 1
 
 
 
-(function(){
+(function () {
     /**
      * 对象解构
      */
@@ -139,7 +139,7 @@ console.log(element1); // outputs 1
 
 
 
-(function(){
+(function () {
     /**
      * 属性命名
      */
@@ -153,7 +153,7 @@ console.log(element1); // outputs 1
 
 
 
-(function(){
+(function () {
     /**
      *默认值 
     */
@@ -187,7 +187,7 @@ console.log(element1); // outputs 1
 
 
 
-(function(){
+(function () {
     /**
      * 展开
      */
